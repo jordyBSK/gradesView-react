@@ -6,15 +6,26 @@ import {useState} from "react";
 
 function App() {
 
+  const [allGrades, setAllGrades] = useState([2,3,4,5]);
 
-    const [note, setNote] = useState('')
+
+  const elementsDeNote = allGrades.map((note) => (
+      <GradeElement grade={note} />
+  ));
+
+
+
+  const [grade, setGrade] = useState('')
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
-      setNote(e.target.value)
+      setGrade(e.target.value)
     }
+
   const buttonClick = () => {
-    alert(`La note est : ${note}`);
-    setNote('')
+    setAllGrades([...allGrades, { ...grade }]);
+
+    setGrade('')
+
     };
   return (
       <>
@@ -164,9 +175,8 @@ function App() {
                                   className="flex flex-row flex-nowrap overflow-y-scroll gap-x-1.5"
                               >
 
-                              <GradeElement grade={5} />
-                                <GradeElement grade={3} />
-                                <GradeElement grade={1} />
+                                {elementsDeNote}
+
                               </div>
                               <div className="flex">
                                 <div>
@@ -180,7 +190,7 @@ function App() {
                                       <input
                                           type="number"
                                           name="number"
-                                          value={note}
+                                          value={grade}
                                           onChange={handleChange}
                                           id="sem1"
                                           className="block w-14 rounded-none rounded-l-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
