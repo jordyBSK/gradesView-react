@@ -21,7 +21,7 @@ export default function SemesterElement({semesterNumber}:{semesterNumber:number}
 
     const buttonClick = () => {
         if (grade === undefined) {
-            console.log('Aucunne note na été indiquée')
+            console.log('Aucune note na été indiquée')
         }else if(grade >= 1 && grade % 0.5 == 0 && grade <= 6){
             setAllGrades([...allGrades, grade]);
             setGrade(0)
@@ -55,7 +55,7 @@ export default function SemesterElement({semesterNumber}:{semesterNumber:number}
                             <label htmlFor="sem1" className="sr-only"
                             >Search candidates</label
                             >
-                        <InputElement onChange={handleChange} onClick={buttonClick} />
+                        <InputElement value={grade} onChange={handleChange} onClick={buttonClick} />
                         </div>
                         <AverageElement average={average}/>
                     </div>
