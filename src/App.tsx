@@ -6,8 +6,9 @@ import {useState} from "react";
 
 function App() {
 
-  const [allGrades, setAllGrades] = useState([2,3,4,5]);
+  const [allGrades, setAllGrades] = useState([1,2,3]);
 
+  const [grade, setGrade] = useState(0)
 
   const elementsDeNote = allGrades.map((note) => (
       <GradeElement grade={note} />
@@ -15,18 +16,16 @@ function App() {
 
 
 
-  const [grade, setGrade] = useState('')
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
-      setGrade(e.target.value)
+      setGrade(parseFloat(e.target.value))
     }
 
   const buttonClick = () => {
-    setAllGrades([...allGrades, { ...grade }]);
-
-    setGrade('')
+    setAllGrades([...allGrades, grade]);
+    setGrade(0)
 
     };
+
   return (
       <>
         <header className="bg-sky-600 pb-24">
