@@ -1,12 +1,10 @@
 import './App.css'
 
-import AverageElement from "./components/averageElement.tsx";
-import SemesterElement from "./components/semesterElement.tsx";
+import SemesterElement from "./components/SemesterElement.tsx";
 
 
 
 export function App() {
-
 
 
 
@@ -148,6 +146,7 @@ export function App() {
 
                           <SemesterElement semesterNumber={0} />
                           <SemesterElement semesterNumber={1} />
+
                           <div className="px-4 py-6 sm:gap-4 sm:px-0">
                             <button
                                 type="button"
