@@ -2,14 +2,16 @@ import SemesterElement from "./SemesterElement.tsx";
 import SemesterButton from "./SemesterButton.tsx"
 import {useState} from "react";
 
-export default function subjectElement({subjectAverage}:{subjectAverage:number}) {
+export default function SubjectElement({subjectAverage}:{subjectAverage:number}) {
     const [count, setCount] = useState(1)
     const [numberSemester,setNumberSemester ] = useState<number[]>([]);
 
-    function increment(){
+    const increment = () => {
+        if(count < 9){
             setCount(count + 1);
-        setNumberSemester([...numberSemester, count]);
-        console.log(numberSemester)
+            setNumberSemester([...numberSemester, count]);
+        }
+
     }
 
     const elementSemester = numberSemester.map((semesterNumber) => (
