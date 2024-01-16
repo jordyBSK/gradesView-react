@@ -5,11 +5,13 @@ import {InputElement} from "./InputElement.tsx";
 
 
 
-export default function SemesterElement({semesterNumber}:{semesterNumber:number}) {
+export default function SemesterElement({semesterNumber, outputFunction,jeSaisPas }:{semesterNumber:number,jeSaisPas:number[], outputFunction:(average:number) => number}) {
 
     const [allGrades, setAllGrades] = useState<number[]>([]);
 
-    const [grade, setGrade] = useState<number>()
+    const [grade, setGrade] = useState<number|string>()
+
+    const average = allGrades.length > 0 ? allGrades.reduce((a, b) => a + b)/allGrades.length : 0;
 
     const elementsDeNote = allGrades.map((note) => (
         <GradeElement grade={note} />
@@ -19,16 +21,16 @@ export default function SemesterElement({semesterNumber}:{semesterNumber:number}
         setGrade(parseFloat(e.target.value))
     }
     function buttonClick () {
-        if (grade === undefined) {
-            console.log('Aucune note na été indiquée')
-        }else if(grade >= 1 && grade % 0.5 == 0 && grade <= 6){
-            setAllGrades([...allGrades, grade]);
-            setGrade("")
-        }else {
+        if (typeof(grade) !== "string" && grade !== undefined) {
+            if (grade >= 1 && grade % 0.5 == 0 && grade <= 6) {
+                setAllGrades([...allGrades, grade]);
+                outputFunction(average)
+                console.log(jeSaisPas)
+            }
             setGrade("")
         }
     };
-    const average = allGrades.length > 0 ? allGrades.reduce((a, b) => a + b)/allGrades.length : 0;
+
 
     return (
         <>

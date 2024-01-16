@@ -6,16 +6,17 @@ export default function SubjectElement({subjectAverage}:{subjectAverage:number})
     const [count, setCount] = useState(1)
     const [numberSemester,setNumberSemester ] = useState<number[]>([]);
 
+    const allAverage: number[] = []
+
     const increment = () => {
         if(count < 9){
             setCount(count + 1);
             setNumberSemester([...numberSemester, count]);
         }
-
     }
 
     const elementSemester = numberSemester.map((semesterNumber) => (
-        <SemesterElement semesterNumber={semesterNumber}/>
+        <SemesterElement jeSaisPas={allAverage} semesterNumber={semesterNumber} outputFunction={(average: number) => allAverage[semesterNumber-1] = average}/>
     ));
 
     return (
