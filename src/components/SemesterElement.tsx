@@ -1,6 +1,6 @@
 import AverageElement from "./AverageElement.tsx";
 import {useState} from "react";
-import GradeElement from "./gradeElement.tsx";
+import GradeElement from "./GradeElement.tsx";
 import {InputElement} from "./InputElement.tsx";
 
 
@@ -18,15 +18,14 @@ export default function SemesterElement({semesterNumber}:{semesterNumber:number}
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setGrade(parseFloat(e.target.value))
     }
-
-    const buttonClick = () => {
+    function buttonClick () {
         if (grade === undefined) {
             console.log('Aucune note na été indiquée')
         }else if(grade >= 1 && grade % 0.5 == 0 && grade <= 6){
             setAllGrades([...allGrades, grade]);
-            setGrade(0)
+setGrade(undefined)
         }else {
-            setGrade(0)
+
         }
     };
     const average = allGrades.length > 0 ? allGrades.reduce((a, b) => a + b)/allGrades.length : 0;
