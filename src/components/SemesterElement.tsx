@@ -5,7 +5,7 @@ import {InputElement} from "./InputElement.tsx";
 
 
 
-export default function SemesterElement({semesterNumber, outputFunction,jeSaisPas }:{semesterNumber:number,jeSaisPas:number[], outputFunction:(average:number) => number}) {
+export default function SemesterElement({semesterNumber, outputFunction, allAverages }:{semesterNumber:number,allAverages:number[], outputFunction:(average:number) => number}) {
 
     const [allGrades, setAllGrades] = useState<number[]>([]);
 
@@ -25,7 +25,7 @@ export default function SemesterElement({semesterNumber, outputFunction,jeSaisPa
             if (grade >= 1 && grade % 0.5 == 0 && grade <= 6) {
                 setAllGrades([...allGrades, grade]);
                 outputFunction(average)
-                console.log(jeSaisPas)
+                console.log(allAverages)
             }
             setGrade("")
         }

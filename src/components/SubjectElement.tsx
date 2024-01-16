@@ -16,7 +16,7 @@ export default function SubjectElement({subjectAverage}:{subjectAverage:number})
     }
 
     const elementSemester = numberSemester.map((semesterNumber) => (
-        <SemesterElement jeSaisPas={allAverage} semesterNumber={semesterNumber} outputFunction={(average: number) => allAverage[semesterNumber-1] = average}/>
+        <SemesterElement allAverages={allAverage} semesterNumber={semesterNumber} outputFunction={(average: number) => allAverage[semesterNumber-1] = average}/>
     ));
 
     return (

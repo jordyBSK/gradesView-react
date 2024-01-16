@@ -1,5 +1,5 @@
 export function InputElement(props: {
-    value: number | undefined,
+    value: number | undefined | string,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
     onClick: () => void
 }) {
