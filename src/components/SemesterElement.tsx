@@ -23,9 +23,9 @@ export default function SemesterElement({semesterNumber}:{semesterNumber:number}
             console.log('Aucune note na été indiquée')
         }else if(grade >= 1 && grade % 0.5 == 0 && grade <= 6){
             setAllGrades([...allGrades, grade]);
-setGrade(undefined)
+            setGrade("")
         }else {
-
+            setGrade("")
         }
     };
     const average = allGrades.length > 0 ? allGrades.reduce((a, b) => a + b)/allGrades.length : 0;
@@ -56,7 +56,7 @@ setGrade(undefined)
                             >
                         <InputElement value={grade} onChange={handleChange} onClick={buttonClick} />
                         </div>
-                        <AverageElement average={average}/>
+                        <AverageElement average={average} />
                     </div>
                 </dd>
             </div>

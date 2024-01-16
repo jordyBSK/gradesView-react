@@ -12,6 +12,8 @@ export function InputElement(props: {
                 name="number"
                 value={props.value}
                 onChange={props.onChange}
+                max={6}
+                min={1}
                 id="sem1"
                 className="block w-14 rounded-none rounded-l-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                 placeholder="4"
