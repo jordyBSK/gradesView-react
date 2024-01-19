@@ -32,8 +32,8 @@ export default function SemesterElement({ semesterNumber, onAverageChange }: Sem
     }
 
     useEffect(() => {
-        onAverageChange(average);
-    }, [allGrades, onAverageChange, average]);
+        onAverageChange(roundAverage);
+    }, [allGrades, average]);
 
     return (
         <>
