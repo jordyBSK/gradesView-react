@@ -1,6 +1,8 @@
 import './App.css'
 
 import SubjectElement from "./components/SubjectElement.tsx";
+import AllSubjectAverage from "./components/AllSubjectAverage.tsx";
+import NavBarElement from "./components/NavBarElement.tsx";
 
 export function App() {
 
@@ -62,43 +64,7 @@ export function App() {
             <div
                 className="hidden border-t border-white border-opacity-20 py-5 lg:block"
             >
-              <div className="grid grid-cols-3 items-center gap-8">
-                <div className="col-span-2">
-                  <nav className="flex space-x-4">
-
-                    <a
-                        href="#"
-                        className="text-white font-bold rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm hover:bg-opacity-10"
-                    >
-                      Math</a
-                    >
-                    <a
-                        href="#"
-                        className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
-                    >
-                      Société</a
-                    >
-                    <a
-                        href="#"
-                        className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
-                    >
-                      Anglais</a
-                    >
-                    <a
-                        href="#"
-                        className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
-                    >
-                      Modules EPSIC</a
-                    >
-                    <a
-                        href="#"
-                        className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
-                    >
-                      CIE</a
-                    >
-                  </nav>
-                </div>
-              </div>
+<NavBarElement/>
             </div>
           </div>
         </header>
@@ -111,120 +77,9 @@ export function App() {
             >
 
               <div className="grid grid-cols-1 gap-4 lg:col-span-2">
-             <SubjectElement subjectAverage={6}/>
+             <SubjectElement/>
               </div>
-
-
-              <div className="grid grid-cols-1 gap-4">
-                <section aria-labelledby="section-2-title">
-                  <h2 className="sr-only" id="section-2-title">Averages</h2>
-                  <div className="overflow-hidden rounded-lg bg-white shadow">
-                    <dl
-                        className="mx-auto grid grid-cols-1 gap-px bg-gray-900/5 sm:grid-cols-2 lg:grid-cols-2"
-                    >
-                      <div
-                          className="col-span-2 flex flex-wrap items-baseline justify-between gap-x-2 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Moyenne générale
-                        </dt>
-                        <dd className="text-xs font-medium text-green-600">+4.75%</dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-bold leading-10 tracking-tight text-gray-900"
-                        >
-                          5.5
-                        </dd>
-                      </div>
-                      <div
-                          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Maths
-                        </dt>
-                        <dd className="text-xs font-medium text-green-600">
-                          +54.02%
-                        </dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
-                        >
-                          6
-                        </dd>
-                      </div>
-                      <div
-                          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Société
-                        </dt>
-                        <dd className="text-xs font-medium text-red-700">-1.39%</dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
-                        >
-                          4.5
-                        </dd>
-                      </div>
-                      <div
-                          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Anglais
-                        </dt>
-                        <dd className="text-xs font-medium text-green-600">
-                          +10.18%
-                        </dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
-                        >
-                          4.5
-                        </dd>
-                      </div>
-                      <div
-                          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Informatique
-                        </dt>
-                        <dd className="text-xs font-medium text-green-600">
-                          +10.18%
-                        </dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
-                        >
-                          4.5
-                        </dd>
-                      </div>
-                      <div
-                          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Modules EPSIC
-                        </dt>
-                        <dd className="text-xs font-medium text-green-600">
-                          +10.18%
-                        </dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
-                        >
-                          4.5
-                        </dd>
-                      </div>
-                      <div
-                          className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-white px-6 py-6"
-                      >
-                        <dt className="text-sm font-medium leading-6 text-gray-500">
-                          Modules CIE
-                        </dt>
-                        <dd className="text-xs font-medium text-red-600">-10.18%</dd>
-                        <dd
-                            className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
-                        >
-                          4.5
-                        </dd>
-                      </div>
-                    </dl>
-                  </div>
-                </section>
-              </div>
+              <AllSubjectAverage/>
             </div>
           </div>
         </main>
