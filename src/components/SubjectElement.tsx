@@ -2,6 +2,7 @@
 
 import SemesterElement from "./SemesterElement.tsx";
 import SemesterButton from "./SemesterButton.tsx";
+import AverageElement from "./AverageElement.tsx";
 import {useState} from "react";
 
 export default function SubjectElement() {
@@ -17,14 +18,15 @@ export default function SubjectElement() {
     };
 
     const averageChange = (semesterNumber: number, newAverage: number) => {
-        setAllAverages((prevAverages) => {
-            const updatedAverages = [...prevAverages];
+        setAllAverages((oldAverages) => {
+            const updatedAverages = [...oldAverages];
             updatedAverages[semesterNumber - 1] = newAverage;
             return updatedAverages;
         });
     };
 
     const subjectAverage =   allAverages.length > 0 ? allAverages.reduce((a, b) => a + b) / allAverages.length : 0;
+    const roundAverage = Math.round(subjectAverage *2) / 2
 
 
     const elementSemester = numberSemester.map((semesterNumber) => (
@@ -48,9 +50,8 @@ export default function SubjectElement() {
                                 </h2>
                             </div>
                             <div className="mt-4 flex md:ml-4 md:mt-0">
-                <span className="inline-flex items-center gap-x-1.5 rounded-md px-3 py-1 text-lg font-bold text-gray-900 ring-1 ring-inset ring-gray-200">
-                  {subjectAverage}
-                </span>
+            <AverageElement average={roundAverage} />
+
                             </div>
                         </div>
                         <div className="mt-6 border-t border-gray-100">

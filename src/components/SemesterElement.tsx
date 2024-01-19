@@ -3,17 +3,18 @@ import AverageElement from "./AverageElement.tsx";
 import GradeElement from "./GradeElement.tsx";
 import { InputElement } from "./InputElement.tsx";
 
-interface SemesterElementProps {
+interface SemesterProps {
     semesterNumber: number;
     onAverageChange: (newAverage: number) => void;
 }
 
-export default function SemesterElement({ semesterNumber, onAverageChange }: SemesterElementProps) {
+export default function SemesterElement({ semesterNumber, onAverageChange }: SemesterProps) {
     const [allGrades, setAllGrades] = useState<number[]>([]);
     const [grade, setGrade] = useState<number | string>();
 
-    const average =
-        allGrades.length > 0 ? allGrades.reduce((a, b) => a + b) / allGrades.length : 0;
+    const average = allGrades.length > 0 ? allGrades.reduce((a, b) => a + b) / allGrades.length : 0;
+    const roundAverage = Math.round(average *2) / 2
+
 
     const elementsDeNote = allGrades.map((note) => <GradeElement grade={note} key={note} />);
 
@@ -48,7 +49,7 @@ export default function SemesterElement({ semesterNumber, onAverageChange }: Sem
                         <div>
                             <InputElement value={grade} onChange={handleChange} onClick={buttonClick} />
                         </div>
-                        <AverageElement average={average} />
+                        <AverageElement average={roundAverage} />
                     </div>
                 </dd>
             </div>
