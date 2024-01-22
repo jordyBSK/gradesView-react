@@ -4,10 +4,31 @@ import SubjectElement from "./components/SubjectElement.tsx";
 import AllSubjectAverage from "./components/AllSubjectAverage.tsx";
 import NavBarElement from "./components/NavBarElement.tsx";
 
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <SubjectElement subject={"Mathématiques"}/>
+  },
+  {
+    path:"/societe",
+    element: <SubjectElement subject={"Société et langues"}/>
+  },
+  {
+    path:"/anglais",
+    element: <SubjectElement subject={"Anglais"}/>
+  },
+  {
+    path:"/epsic",
+    element: <SubjectElement subject={"Modules EPSIC"}/>
+  },
+  {
+    path:"/cie",
+    element: <SubjectElement subject={"Modules CIE"}/>
+  },
+])
 export function App() {
-
-
-
   return (
       <>
         <header className="bg-sky-600 pb-24">
@@ -77,7 +98,7 @@ export function App() {
             >
 
               <div className="grid grid-cols-1 gap-4 lg:col-span-2">
-             <SubjectElement/>
+                <RouterProvider router={router}/>
               </div>
               <AllSubjectAverage/>
             </div>

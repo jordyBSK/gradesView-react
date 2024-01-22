@@ -3,6 +3,7 @@ import GradeSvg from "./GradeSvg.tsx";
 export default function AverageElement({average}:{average:number}) {
 
 if (average < 1)return
+
     return(
         <>
                 <span

@@ -5,7 +5,7 @@ import SemesterButton from "./SemesterButton.tsx";
 import AverageElement from "./AverageElement.tsx";
 import {useState} from "react";
 
-export default function SubjectElement() {
+export default function SubjectElement({subject}:{subject:string}) {
     const [count, setCount] = useState(1);
     const [numberSemester, setNumberSemester] = useState<number[]>([]);
     const [allAverages, setAllAverages] = useState<number[]>([]);
@@ -38,6 +38,7 @@ export default function SubjectElement() {
     ));
 
     return (
+
         <>
             <section aria-labelledby="section-1-title">
                 <h2 className="sr-only" id="section-1-title">Grades</h2>
@@ -46,7 +47,7 @@ export default function SubjectElement() {
                         <div className="md:flex md:items-center md:justify-between">
                             <div className="min-w-0 flex-1">
                                 <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-                                    Mathématiques
+                                    {subject}
                                 </h2>
                             </div>
                             <div className="mt-4 flex md:ml-4 md:mt-0">

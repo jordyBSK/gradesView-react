@@ -1,5 +1,8 @@
+import {useAverageStore} from "./useAverageStore.ts";
 
 export default function AllSubjectAverage() {
+    const {math, ang, epsic, cie} = useAverageStore
+
     return (
         <>
             <div className="grid grid-cols-1 gap-4">
@@ -34,7 +37,7 @@ export default function AllSubjectAverage() {
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    6
+                                    {math}
                                 </dd>
                             </div>
                             <div
