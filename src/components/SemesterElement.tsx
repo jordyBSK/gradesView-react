@@ -3,6 +3,7 @@ import AverageElement from "./AverageElement.tsx";
 import GradeElement from "./GradeElement.tsx";
 import { InputElement } from "./InputElement.tsx";
 
+
 interface SemesterProps {
     semesterNumber: number;
     onAverageChange: (newAverage: number) => void;

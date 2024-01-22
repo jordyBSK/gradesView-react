@@ -4,6 +4,7 @@ import SemesterElement from "./SemesterElement.tsx";
 import SemesterButton from "./SemesterButton.tsx";
 import AverageElement from "./AverageElement.tsx";
 import {useState} from "react";
+import {useAverageStore} from "./useAverageStore.ts";
 
 export default function SubjectElement({subject}:{subject:string}) {
     const [count, setCount] = useState(1);
@@ -11,7 +12,7 @@ export default function SubjectElement({subject}:{subject:string}) {
     const [allAverages, setAllAverages] = useState<number[]>([]);
 
     const increment = () => {
-        if (count < 9) {
+        if (count < 5) {
             setCount(count + 1);
             setNumberSemester([...numberSemester, count]);
         }
@@ -25,9 +26,11 @@ export default function SubjectElement({subject}:{subject:string}) {
         });
     };
 
+
     const subjectAverage =   allAverages.length > 0 ? allAverages.reduce((a, b) => a + b) / allAverages.length : 0;
     const roundAverage = Math.round(subjectAverage *2) / 2
 
+    useAverageStore.getState().updateAverage(subjectAverage, subject);
 
     const elementSemester = numberSemester.map((semesterNumber) => (
         <SemesterElement
