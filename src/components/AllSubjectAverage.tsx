@@ -1,7 +1,7 @@
 import {useAverageStore} from "./useAverageStore.ts";
 
 export default function AllSubjectAverage() {
-    const {math, ang, epsic, cie} = useAverageStore
+const { math, ang, epsic, societe, cie } = useAverageStore()
 
     return (
         <>
@@ -50,7 +50,7 @@ export default function AllSubjectAverage() {
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    4.5
+                                    {societe}
                                 </dd>
                             </div>
                             <div
@@ -65,7 +65,7 @@ export default function AllSubjectAverage() {
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    4.5
+                                    {ang}
                                 </dd>
                             </div>
                             <div
@@ -95,7 +95,7 @@ export default function AllSubjectAverage() {
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    4.5
+                                    {epsic}
                                 </dd>
                             </div>
                             <div
@@ -108,7 +108,7 @@ export default function AllSubjectAverage() {
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    4.5
+                                    {cie}
                                 </dd>
                             </div>
                         </dl>
