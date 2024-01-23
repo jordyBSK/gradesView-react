@@ -11,6 +11,7 @@ export default function SubjectElement({subject}:{subject:string}) {
     const [numberSemester, setNumberSemester] = useState<number[]>([]);
     const [allAverages, setAllAverages] = useState<number[]>([]);
 
+
     const increment = () => {
         if (count < 5) {
             setCount(count + 1);
@@ -30,7 +31,7 @@ export default function SubjectElement({subject}:{subject:string}) {
     const subjectAverage =   allAverages.length > 0 ? allAverages.reduce((a, b) => a + b) / allAverages.length : 0;
     const roundAverage = Math.round(subjectAverage *2) / 2
 
-    useAverageStore.getState().updateAverage(subjectAverage, subject);
+    useAverageStore.getState().updateAverage(subjectAverage, 'math');
 
     const elementSemester = numberSemester.map((semesterNumber) => (
         <SemesterElement

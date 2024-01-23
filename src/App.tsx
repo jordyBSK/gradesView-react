@@ -3,29 +3,48 @@ import './App.css'
 import SubjectElement from "./components/SubjectElement.tsx";
 import AllSubjectAverage from "./components/AllSubjectAverage.tsx";
 import NavBarElement from "./components/NavBarElement.tsx";
-
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <SubjectElement subject={"Mathématiques"}/>
-  },
-  {
-    path:"/societe",
-    element: <SubjectElement subject={"Société et langues"}/>
-  },
-  {
-    path:"/anglais",
-    element: <SubjectElement subject={"Anglais"}/>
-  },
+    element: <div>
+ <NavBarElement/>
+      <SubjectElement subject={"Mathématiques"}/>
+    </div>
+},
+{
+  path:"/societe",
+      element:
+      <div>
+        <NavBarElement/>
+        <SubjectElement subject={"Société et langues"}/>
+      </div>
+}
+,
+{
+  path:"/anglais",
+      element:
+      <div>
+        <NavBarElement/>
+        <SubjectElement subject={"Anglais"}/>
+      </div>
+
+},
   {
     path:"/epsic",
-    element: <SubjectElement subject={"Modules EPSIC"}/>
+    element: <div>
+      <NavBarElement/>
+      <SubjectElement subject={"Modules EPSIC"}/>
+    </div>
   },
   {
     path:"/cie",
-    element: <SubjectElement subject={"Modules CIE"}/>
+    element: <div>
+      <NavBarElement/>
+      <SubjectElement subject={"Modules CIE"}/>
+    </div>
   },
 ])
 export function App() {
@@ -74,18 +93,13 @@ export function App() {
                       className="w-6 h-6"
                   >
                     <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M4.755 10.059a7.5 7.5 0 0112.548-3.364l1.903 1.903h-3.183a.75.75 0 100 1.5h4.992a.75.75 0 00.75-.75V4.356a.75.75 0 00-1.5 0v3.18l-1.9-1.9A9 9 0 003.306 9.67a.75.75 0 101.45.388zm15.408 3.352a.75.75 0 00-.919.53 7.5 7.5 0 01-12.548 3.364l-1.902-1.903h3.183a.75.75 0 000-1.5H2.984a.75.75 0 00-.75.75v4.992a.75.75 0 001.5 0v-3.18l1.9 1.9a9 9 0 0015.059-4.035.75.75 0 00-.53-.918z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                     />
                   </svg>
                 </button>
               </div>
-            </div>
-            <div
-                className="hidden border-t border-white border-opacity-20 py-5 lg:block"
-            >
-<NavBarElement/>
             </div>
           </div>
         </header>

@@ -1,37 +1,38 @@
+import {Link} from "react-router-dom";
 
 export default function NavBarElement() {
     return (
         <div className="grid grid-cols-3 items-center gap-8">
             <div className="col-span-2">
                 <nav className="flex space-x-4">
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
                         className="text-white font-bold rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm hover:bg-opacity-10"
                     >
-                        Math</a>
-                    <a
-                        href="/societe"
+                        Math</Link>
+                    <Link
+                        to="/societe"
                         className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                     >
-                        Société</a
+                        Société</Link
                     >
-                    <a
-                        href="/anglais"
+                    <Link
+                        to="/anglais"
                         className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                     >
-                        Anglais</a
+                        Anglais</Link
                     >
-                    <a
-                        href="/epsic"
+                    <Link
+                        to="/epsic"
                         className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                     >
-                        Modules EPSIC</a
+                        Modules EPSIC</Link
                     >
-                    <a
-                        href="/cie"
+                    <Link
+                        to="/cie"
                         className="text-sky-100 rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-10"
                     >
-                        CIE</a
+                        CIE</Link
                     >
                 </nav>
             </div>

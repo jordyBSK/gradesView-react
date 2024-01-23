@@ -1,6 +1,7 @@
 import {useAverageStore} from "./useAverageStore.ts";
 
 export default function AllSubjectAverage() {
+
 const { math, ang, epsic, societe, cie } = useAverageStore()
 
     return (

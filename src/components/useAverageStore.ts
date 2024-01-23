@@ -16,6 +16,4 @@ export const useAverageStore = create<AverageStore>((set) => ({
     societe: null,
     cie: null,
 
-    updateAverage: (newAverage: number | null, key: keyof AverageStore) =>
-        set(() => ({ [key]: newAverage })),
-}));
+    updateAverage: (newAverage: number | null, key: keyof AverageStore) => set(() => ({ [key]: newAverage })),}));
