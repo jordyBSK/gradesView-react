@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import SubjectElement from "./components/SubjectElement.tsx";
+import AngElement from './components/subject/Anglais.tsx';
+import Societe from "./components/subject/Societe.tsx";
+import Mathematiques from "./components/subject/MathElement.tsx";
+
 
 
 const router = createBrowserRouter([
@@ -13,34 +16,24 @@ const router = createBrowserRouter([
         children: [
             {
                 path:"/",
-                element: <div>
-                    <SubjectElement subject={"Mathematiques"}/>
-                </div>
+                element: <Mathematiques/>
             },
             {
                 path:"/societe",
-                element: <SubjectElement subject={"SocieteEtLangues"}/>
+                element: <Societe/>
             }
             ,
             {
                 path:"/anglais",
-                element:
-                    <div>
-                        <SubjectElement subject={"Anglais"}/>
-                    </div>
-
+                element: <AngElement/>
             },
             {
                 path:"/epsic",
-                element: <div>
-                    <SubjectElement subject={"ModulesEPSIC"}/>
-                </div>
+                element: <Mathematiques/>
             },
             {
                 path:"/cie",
-                element: <div>
-                    <SubjectElement subject={"ModulesCIE"}/>
-                </div>
+                element: <Mathematiques/>
             },
         ]
     },

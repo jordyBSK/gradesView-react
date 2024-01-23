@@ -7,10 +7,11 @@ import { InputElement } from "./InputElement.tsx";
 interface SemesterProps {
     semesterNumber: number;
     onAverageChange: (newAverage: number) => void;
+    grades: number[]
 }
 
-export default function SemesterElement({ semesterNumber, onAverageChange }: SemesterProps) {
-    const [allGrades, setAllGrades] = useState<number[]>([]);
+export default function SemesterElement({ semesterNumber, onAverageChange, grades}: SemesterProps) {
+    const [allGrades, setAllGrades] = useState<number[]>(grades);
     const [grade, setGrade] = useState<number | string>();
 
     const average = allGrades.length > 0 ? allGrades.reduce((a, b) => a + b) / allGrades.length : 0;
