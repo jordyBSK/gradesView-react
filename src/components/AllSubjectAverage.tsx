@@ -2,7 +2,7 @@ import {useAverageStore} from "./useAverageStore.ts";
 
 export default function AllSubjectAverage() {
 
-const { math, ang, epsic, societe, cie } = useAverageStore()
+const { Mathematiques, Anglais, SocieteEtLangues, ModulesEPSIC, ModulesCIE} = useAverageStore()
 
     return (
         <>
@@ -38,7 +38,7 @@ const { math, ang, epsic, societe, cie } = useAverageStore()
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    {math}
+                                    {Mathematiques}
                                 </dd>
                             </div>
                             <div
@@ -51,7 +51,7 @@ const { math, ang, epsic, societe, cie } = useAverageStore()
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    {societe}
+                                    {SocieteEtLangues}
                                 </dd>
                             </div>
                             <div
@@ -66,7 +66,7 @@ const { math, ang, epsic, societe, cie } = useAverageStore()
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    {ang}
+                                    {Anglais}
                                 </dd>
                             </div>
                             <div
@@ -96,7 +96,7 @@ const { math, ang, epsic, societe, cie } = useAverageStore()
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    {epsic}
+                                    {ModulesEPSIC}
                                 </dd>
                             </div>
                             <div
@@ -109,7 +109,7 @@ const { math, ang, epsic, societe, cie } = useAverageStore()
                                 <dd
                                     className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900"
                                 >
-                                    {cie}
+                                    {ModulesCIE}
                                 </dd>
                             </div>
                         </dl>

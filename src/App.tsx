@@ -1,52 +1,11 @@
 import './App.css'
 
-import SubjectElement from "./components/SubjectElement.tsx";
 import AllSubjectAverage from "./components/AllSubjectAverage.tsx";
 import NavBarElement from "./components/NavBarElement.tsx";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 
 
-const router = createBrowserRouter([
-  {
-    path:"/",
-    element: <div>
- <NavBarElement/>
-      <SubjectElement subject={"Mathématiques"}/>
-    </div>
-},
-{
-  path:"/societe",
-      element:
-      <div>
-        <NavBarElement/>
-        <SubjectElement subject={"Société et langues"}/>
-      </div>
-}
-,
-{
-  path:"/anglais",
-      element:
-      <div>
-        <NavBarElement/>
-        <SubjectElement subject={"Anglais"}/>
-      </div>
 
-},
-  {
-    path:"/epsic",
-    element: <div>
-      <NavBarElement/>
-      <SubjectElement subject={"Modules EPSIC"}/>
-    </div>
-  },
-  {
-    path:"/cie",
-    element: <div>
-      <NavBarElement/>
-      <SubjectElement subject={"Modules CIE"}/>
-    </div>
-  },
-])
 export function App() {
   return (
       <>
@@ -101,6 +60,9 @@ export function App() {
                 </button>
               </div>
             </div>
+            <div className="hidden border-t border-white border-opacity-20 py-5 lg:block">
+              <NavBarElement/>
+            </div>
           </div>
         </header>
         <main className="-mt-24 pb-8">
@@ -112,7 +74,7 @@ export function App() {
             >
 
               <div className="grid grid-cols-1 gap-4 lg:col-span-2">
-                <RouterProvider router={router}/>
+                <Outlet />
               </div>
               <AllSubjectAverage/>
             </div>
